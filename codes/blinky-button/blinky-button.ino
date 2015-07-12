@@ -1,6 +1,6 @@
 
 #define LED_PIN 13
-#define BUTTON_PIN 8
+#define BUTTON_PIN 3
 
 void setup()
 {
