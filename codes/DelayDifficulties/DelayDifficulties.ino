@@ -1,10 +1,21 @@
-void setup() {
-  Serial.begin(1200);
+bool ledState = false;
+
+void toggleLed() {
+  digitalWrite(3, ledState);
+  ledState = !ledState;
 }
 
-// Attempt to print a message every second.
+void doSomethingElse() {
+  delay(10000); // Wait 10 seconds
+}
+
+void setup() {
+  pinMode(3, OUTPUT);
+}
+
+// Attempt to toggle LED every second.
 void loop() {
-  // (38 chars) * (8 bits/char) / (1200 bits/second) = 0.25 seconds
-  Serial.println("This print takes about 0.25 seconds.");
+  toggleLed();
+  doSomethingElse(); // Extra task takes more time
   delay(1000);
 }
