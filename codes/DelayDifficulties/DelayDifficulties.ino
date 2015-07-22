@@ -16,6 +16,8 @@ void setup() {
 // Attempt to toggle LED every second.
 void loop() {
   toggleLed();
-  doSomethingElse(); // Extra task takes more time
   delay(1000);
+  
+  // Extra call can take unpredictable amount of time
+  doSomethingElse(); 
 }
