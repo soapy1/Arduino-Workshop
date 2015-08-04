@@ -16,19 +16,19 @@ void setup() {
 
 void loop() {
   
-  if (digitalRead(R_IN) == HIGH){
+  if (digitalRead(R_IN) == LOW){
     digitalWrite(R_OUT, HIGH);
   }else{
    digitalWrite(R_OUT, LOW);
   } 
   
-  if (digitalRead(G_IN) == HIGH){
+  if (digitalRead(G_IN) == LOW){
     digitalWrite(G_OUT, HIGH);
   }else{
    digitalWrite(G_OUT, LOW);
   } 
   
-  if (digitalRead(B_IN) == HIGH){
+  if (digitalRead(B_IN) == LOW){
     digitalWrite(B_OUT, HIGH);
   }else{
    digitalWrite(B_OUT, LOW);
