@@ -15,9 +15,13 @@ public:
 
   // Get the debounced state of the pin
   bool getState();
+
+  // True if state has changed since this method was last called
+  bool stateHasChanged();
   
 private:
   int pin;
+  bool stateChanged;
   bool state;
   long debounceDelay;
   long lastChangeTime;

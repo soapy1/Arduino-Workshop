@@ -29,7 +29,8 @@ DebouncedInput::DebouncedInput(int pin, long debounceDelay) :
   debounceDelay(debounceDelay),
   state(LOW),
   lastChangeTime(micros()),
-  lastReading(LOW)
+  lastReading(LOW),
+  stateChanged(false)
 {
   pinMode(pin, INPUT);
 }
@@ -53,6 +54,7 @@ void DebouncedInput::update() {
     // Otherwise, check if the input has stayed constant
     // long enough to consider it a state change.
     else if (micros() - lastChangeTime >= debounceDelay) {
+      stateChanged = true;
       state = reading;
     }
   }
@@ -63,4 +65,13 @@ void DebouncedInput::update() {
 
 bool DebouncedInput::getState() {
   return state;
+}
+
+bool DebouncedInput::stateHasChanged() {
+  if (stateChanged) {
+    stateChanged = false;
+    return true;
+  }
+
+  return false;
 }
