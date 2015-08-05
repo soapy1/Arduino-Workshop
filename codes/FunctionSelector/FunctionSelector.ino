@@ -11,6 +11,7 @@ DebouncedInput scrollButton(scrollButtonPin, debounceDelayMicros);
 DebouncedInput selectButton(selectButtonPin, debounceDelayMicros);
 
 void setup() {
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -24,16 +25,16 @@ void loop() {
   }
 
   // If select button is on rising edge, execute function
-  if (selectButton.stateHasChanged() && scrollButton.getState()) {
+  if (selectButton.stateHasChanged() && selectButton.getState()) {
     switch (scrollPosition) {
       case 0:
-        // call function 0
+        Serial.println(0);
         break;
       case 1:
-        // call function 1
+        Serial.println(1);
         break;
       case 2:
-        // call function 2
+        Serial.println(2);
         break;
     }
   }
