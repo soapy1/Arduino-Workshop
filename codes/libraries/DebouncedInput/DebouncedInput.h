@@ -1,5 +1,8 @@
 // Debounces inputs. See class method definitions for an
 // explanation.
+
+#include <Arduino.h>
+
 class DebouncedInput {
 public:
   // Initialize with the pin to debounce and the delay in microseconds
