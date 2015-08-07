@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-  lcd.cursor(0, 1);
+  lcd.setCursor(0, 1);
   lcd.print(millis() / 1000);
-  lcd.print(" s");
+  lcd.print(" seconds");
 }
